@@ -3,8 +3,6 @@ Welcome to A Practical Guide to llama.cpp — an independent, community-written 
 
 Based on the open-source project llama.cpp by Georgi Gerganov and contributors.
 
-llama.cpp began with a simple goal: to run Meta’s LLaMA models efficiently on consumer hardware with minimal dependencies. Today, it powers local inference across desktops, servers, and edge devices.
-Our aim is to make llama.cpp approachable: minimal setup, maximum performance, anywhere.
 ## What is llama.cpp?
 
 At its core, `llama.cpp` is a plain C/C++ implementation for running Large Language Models (LLMs). This "zero-dependency" approach makes it incredibly portable, efficient, and easy to embed in other applications.
@@ -13,7 +11,7 @@ It is the primary development ground for its tensor library, **`ggml`**, and the
 
 ### The GGUF Advantage
 
-You will see the term **GGUF** everywhere. GGUF is a custom file format designed specifically for `llama.cpp`. Think of it as a `.zip` file for LLMs. It contains everything needed to run a model:
+You will see the term **GGUF** everywhere. Think of it as a `.zip` file for LLMs. It contains everything needed to run a model:
 
 - **The Model Weights:** The core parameters of the neural network.
 - **The Tokenizer:** The vocabulary and logic to convert text to and from numbers the model understands.
