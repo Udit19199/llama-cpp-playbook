@@ -6,7 +6,7 @@ One of the biggest challenges when working with LLMs is that their output can be
 
 ## What are Grammars?
 
-A grammar is a formal definition of a language or format. `llama.cpp` uses a format called **GBNF (GGML Backus-Naur Form)** to define these rules. By providing a GBNF grammar to the model, you constrain its output at the token level, guaranteeing that the generated text is always valid according to the rules you've defined.
+A grammar is a formal definition of a language or format. `llama.cpp` uses a format called **GBNF (GGUF Backus-Naur Form)** to define these rules. By providing a GBNF grammar to the model, you constrain its output at the token level, guaranteeing that the generated text is always valid according to the rules you've defined.
 
 This is incredibly powerful for a few key reasons:
 

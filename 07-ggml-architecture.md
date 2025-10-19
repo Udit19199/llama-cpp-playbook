@@ -1,9 +1,11 @@
 
-# An Introduction to `ggml`
+# An Introduction to ggml and GGUF
 
 At the heart of `llama.cpp` lies `ggml`, a bespoke tensor library designed from the ground up for one purpose: to enable high-performance machine learning inference on commodity hardware. If `llama.cpp` is the car, `ggml` is the engine.
 
 This document provides a high-level overview of `ggml`'s architecture and philosophy, intended for developers and researchers who want to understand how `llama.cpp` works internally.
+
+**Note:** While `ggml` is the name of the tensor library, the file format it uses has evolved. The modern format is **GGUF (GPT-Generated Unified Format)**, which has succeeded the original GGML format. This document describes the core concepts of the `ggml` library that power GGUF.
 
 ## The Philosophy of `ggml`
 
@@ -22,7 +24,7 @@ To understand `ggml`, you need to grasp four key concepts: the Tensor, the Conte
 
 The tensor is the fundamental data structure in `ggml`. It's a multi-dimensional array that holds the model's weights, activations, and other data. However, a `ggml_tensor` is more than just an array; it's a metadata object that contains:
 
--   **Type:** The data type of the tensor's elements (e.g., `GGML_TYPE_F32` for 32-bit floats, or `GGML_TYPE_Q4_K_M` for a 4-bit quantized type).
+-   **Type:** The data type of the tensor's elements (e.g., `GGUF_TYPE_F32` for 32-bit floats, or `GGUF_TYPE_Q4_K_M` for a 4-bit quantized type).
 -   **Shape:** The dimensions of the tensor (e.g., a 2D matrix or a 3D cube).
 -   **A Pointer to the Data:** The memory address where the actual values are stored.
 
@@ -70,9 +72,9 @@ Here is a conceptual C code example of how you would use `ggml` to compute a sim
 struct ggml_context * ctx = ggml_init(/* memory size */);
 
 // 2. Define input and parameter tensors. Their data would be filled here.
-struct ggml_tensor * x = ggml_new_tensor_1d(ctx, GGML_TYPE_F32, n_inputs);
-struct ggml_tensor * W = ggml_new_tensor_2d(ctx, GGML_TYPE_F32, n_inputs, n_outputs);
-struct ggml_tensor * b = ggml_new_tensor_1d(ctx, GGML_TYPE_F32, n_outputs);
+struct ggml_tensor * x = ggml_new_tensor_1d(ctx, GGUF_TYPE_F32, n_inputs);
+struct ggml_tensor * W = ggml_new_tensor_2d(ctx, GGUF_TYPE_F32, n_inputs, n_outputs);
+struct ggml_tensor * b = ggml_new_tensor_1d(ctx, GGUF_TYPE_F32, n_outputs);
 
 // 3. Build the computation graph (no math is done yet)
 struct ggml_tensor * xw = ggml_mul_mat(ctx, W, x); // Define the matrix multiplication

@@ -111,14 +111,14 @@ ggml_init_cublas: found 1 CUDA devices:
   Device 0: NVIDIA GeForce RTX 4090, compute capability 8.9, VMM: yes
 ... (more output) ...
 llm_load_tensors: ggml ctx size =    0.23 MiB
-llm_load_tensors: offloading 33 layers to GPU
-llm_load_tensors: offloaded 33/33 layers to GPU
+llm_load_tensors: offloading 18 layers to GPU
+llm_load_tensors: offloaded 18/18 layers to GPU
 llm_load_tensors:        CPU buffer size =   129.33 MiB
-llm_load_tensors:      CUDA0 buffer size =  1541.33 MiB
+llm_load_tensors:      CUDA0 buffer size =   841.83 MiB
 ...
 ```
 
-Notice the lines `offloading 33 layers to GPU` and the reported `CUDA0 buffer size`. This confirms acceleration is working! You should notice a significant improvement in generation speed.
+Notice the lines `offloading 18 layers to GPU` and the reported `CUDA0 buffer size`. This confirms acceleration is working! You should notice a significant improvement in generation speed.
 
 ## Common `llama-cli` Flags
 

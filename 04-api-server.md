@@ -18,8 +18,8 @@ If successful, the server will load the model and start listening for HTTP reque
 
 ```
 ... (model loading logs) ...
-lama_new_context_with_model: max tensor size =   256.00 MiB
-lama server listening at http://127.0.0.1:8080
+llama_new_context_with_model: max tensor size =   256.00 MiB
+llama server listening at http://127.0.0.1:8080
 ```
 
 Your `llama.cpp` instance is now an API service! Keep this terminal window open. You'll need a separate terminal for the next steps.

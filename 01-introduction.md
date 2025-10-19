@@ -9,7 +9,7 @@ Our aim is to make llama.cpp approachable: minimal setup, maximum performance, a
 
 At its core, `llama.cpp` is a plain C/C++ implementation for running Large Language Models (LLMs). This "zero-dependency" approach makes it incredibly portable, efficient, and easy to embed in other applications.
 
-It is the primary development ground for its tensor library, **`ggml`**, and the home of the **GGUF (Georgi Gerganov Universal Format)** file format, which is central to the ecosystem.
+It is the primary development ground for its tensor library, **`ggml`**, and the home of the **GGUF (GPT-Generated Universal Format)** file format, which is central to the ecosystem.
 
 ### The GGUF Advantage
 

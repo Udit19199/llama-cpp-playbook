@@ -1,7 +1,7 @@
 
 # The GGUF File Format
 
-`GGUF` stands for **Georgi Gerganov Universal Format**. As the name suggests, it is the foundational file format that makes the `ggml` ecosystem, including `llama.cpp`, work so seamlessly.
+`GGUF` stands for **GPT-Generated Universal Format**. As the name suggests, it is the foundational file format that makes the `ggml` ecosystem, including `llama.cpp`, work so seamlessly.
 
 This document provides a technical overview of the GGUF format for developers and researchers.
 
@@ -68,10 +68,10 @@ Here are some of the most important standardized keys:
 | `llama.block_count` | The number of transformer blocks (layers) in the model. |
 | `llama.attention.head_count` | The number of attention heads. |
 | `llama.attention.head_count_kv` | The number of key-value heads (for Grouped-Query Attention). |
-| `tokenizer.ggml.model` | The tokenizer type, e.g., `llama` for SentencePiece, `gpt2` for BPE. |
-| `tokenizer.ggml.tokens` | An array of strings representing the tokenizer's vocabulary. |
-| `tokenizer.ggml.scores` | An array of floats representing the score for each vocabulary token (for SentencePiece). |
-| `tokenizer.ggml.merges` | An array of strings for BPE merges. |
+| `tokenizer.gguf.model` | The tokenizer type, e.g., `llama` for SentencePiece, `gpt2` for BPE. |
+| `tokenizer.gguf.tokens` | An array of strings representing the tokenizer's vocabulary. |
+| `tokenizer.gguf.scores` | An array of floats representing the score for each vocabulary token (for SentencePiece). |
+| `tokenizer.gguf.merges` | An array of strings for BPE merges. |
 | `tokenizer.chat_template` | A Jinja2 template string defining how to format conversational prompts. |
 
 Because this is a key-value store, new metadata can be added to the GGUF standard without breaking compatibility with older versions of `llama.cpp`. An older client will simply ignore keys it doesn't recognize.
